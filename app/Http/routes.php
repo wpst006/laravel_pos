@@ -26,7 +26,8 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web']], function () {   
     Route::get('/setup', 'ProductController@setup');
     Route::post('/save', 'ProductController@save');
+    Route::get('/', 'ProductController@index');
 });

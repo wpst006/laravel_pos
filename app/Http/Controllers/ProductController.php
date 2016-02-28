@@ -30,4 +30,13 @@ class ProductController extends Controller
         echo "New Product is successfully saved.";
         exit();
     }
+    
+    public function index(Request $request)
+    {
+        $products = Product::all();
+        
+        return view('products.index', [
+            'products' => $products,
+        ]);
+    }
 }
